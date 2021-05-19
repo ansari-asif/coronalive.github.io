@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="header" id="topheader">
+		<nav class="navbar  navbar-expand-lg fixed-top  ">
+			<div class="container">
+				<a class="navbar-brand text-white font-weight-bold" href="#">GO CORONA GO</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse ml-auto" id="collapsibleNavbar">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto" >
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">HOME</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">SERVICES</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">CONTACT US</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">ABOUT US</a>
+						</li>
+
+
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+	<!-- header section start -->
+		<section class="header_section">
+			<div class="center_div">
+				<small class="text-warning">By Ansari Aasif</small>
+				<h1 class="font-weight-bold text-capitalize">corona updates all over the world</h1>
+				<p class="text-capitalize font-weight-bold">Wash your hands again and again | | be alert | | be safe</p>
+
+				<div class="header_buttons">
+					<a href="">AboutUs</a>
+					<a href="" id="clippath">MoreInfo</a>
+				</div>
+			</div>
+		</section>
+	<!-- header section end -->
+	</div>
+	<div class="container-fluid" id="corona_api">
+		<h3 class="text-center p-4 m-4 text-danger">Data of Corona Cases :)</h3>
+<table class="table table-dark table-striped table-responsive text-center " id="tblval">
+    <thead class="thead-light ">
+      <tr>
+        <th>Country</th>
+        <th>TotalConfirmed</th>
+        <th>TotalDeaths</th>
+        <th>TotalRecovered</th>
+        <th>NewConfirmed</th>
+        <th>NewDeaths</th>
+        <th>NewRecovered</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+    </tbody>
+  </table>
+  <h4 class="text-warning text-center p-3">Made By Ansari Aasif</h4>
+	</div>
+
+	
+
+
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<script>
+		fetch('https://api.covid19api.com/summary').then((apidata)=>{
+			
+			return apidata.json();
+		}).then((actualdata)=>{
+			
+			var tblval=document.getElementById('tblval');
+			var totalcountry=(actualdata['Countries'].length);
+			for (var i =1; i<=totalcountry-1; i++) {
+				var x=tblval.insertRow();
+				x.insertCell(0);
+			const Country=(actualdata.Countries[i].Country);
+			const TotalConfirmed=(actualdata.Countries[i].TotalConfirmed);
+			const TotalDeaths=(actualdata.Countries[i].TotalDeaths);
+			const TotalRecovered=(actualdata.Countries[i].TotalRecovered);
+			const NewConfirmed=(actualdata.Countries[i].NewConfirmed);
+			const NewDeaths=(actualdata.Countries[i].NewDeaths);
+			const NewRecovered=(actualdata.Countries[i].NewRecovered);
+
+			tblval.rows[i].cells[0].innerHTML=Country;
+			tblval.rows[i].cells[0].style.color='yellow';
+
+			x.insertCell(1);
+			tblval.rows[i].cells[1].innerHTML=TotalConfirmed;
+			x.insertCell(2);
+			tblval.rows[i].cells[2].innerHTML=TotalDeaths;
+			x.insertCell(3);
+			tblval.rows[i].cells[3].innerHTML=TotalRecovered;
+			x.insertCell(4);
+			tblval.rows[i].cells[4].innerHTML=NewConfirmed;
+			x.insertCell(5);
+			tblval.rows[i].cells[5].innerHTML=NewDeaths;
+			x.insertCell(6);
+			tblval.rows[i].cells[6].innerHTML=NewRecovered;
+				
+			}
+			
+
+
+		}).catch((error)=>{
+			console.log(`the error is : ${error}`);
+		})
+	</script>
+</body>
+</html> 

@@ -1,0 +1,108 @@
+	@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+
+	}
+	a{
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: none;
+	}
+	li{
+		list-style: none;
+	}
+	p{
+		font-size: 1rem;
+		font-weight: 400;
+		color: #606060;
+		line-height: 1.6;
+	}
+	.header{
+		width: 100%;
+		height: 100vh;
+		background-image:linear-gradient(rgba(0,168,255,0.3),rgba(0,168,255,0.3)), url(images/img14.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+		-webkit-clip-path: polygon(0% 0%, 100% 0, 100% 78%, 50% 100%, 0 78%);
+		clip-path: polygon(0% 0%, 100% 0, 100% 78%, 50% 100%, 0 78%);
+	}
+
+	.header:before{
+		content: "";
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		right: 0%;
+		bottom: 0%;
+		opacity: 0.3;
+		z-index: -1; 
+		background: linear-gradient(to right,#1e5799 0%,#3ccdbb 0%,#16c9f6 100%);
+	}
+	.navbar:before{
+		content: "";
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		right: 0%;
+		bottom: 0%;
+		opacity: 0.3;
+		z-index: -1; 
+		background: linear-gradient(to right,#1e5799 0%,#3ccdbb 0%,#16c9f6 100%);
+
+	}
+
+	.nav-item a{
+		color: #fff !important;
+		font-weight: bold;
+	}
+	.header_section{
+		font-family: 'Noto Sans', sans-serif;
+		width: 100%;
+		height: 100vh;
+		
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+	}
+	.header_buttons a{
+		border: 2px solid #fff;
+		border-radius: 100px;
+		line-height: 1.6;
+		font-size: 1.3rem;
+		font-weight: 600;
+		margin: 0 5px;
+		padding: 12px 35px;
+		text-align: center;
+		color: #fff;
+		outline: none;
+
+	}
+	
+
+	.header_buttons a:hover{	
+		color: orange;		
+		background-color: white;
+		text-decoration: none;
+		text-shadow: 0 0 20px 0 rgba(0,0,0,0.3)  
+	}
+	.center_div p{
+		letter-spacing: 3px;
+		color: black;
+		padding: 10px 0 20px 0;
+		font-size: 1.3rem;
+		font-family: 'Pattaya', sans-serif;
+	}
+
+	#corona_api{
+		width: 100%;
+		height: auto;
+		background-color: #606060;
+	}
